@@ -1,24 +1,25 @@
 <div class="container">
     <div class="formula">
-        <div class="old">3 + 17</div>
-        <div class="new">12,5</div>
+        <div class="old">{{ formattedFormula }}</div>
+        <div class="new">{{ formattedNumber }}</div>
+        <div class="error">{{ errorMessage }}</div>
     </div>
-    <button class="div7">7</button>
-    <button class="div8">8</button>
-    <button class="div9">9</button>
-    <button class="divDivide">/</button>
-    <button class="divDelete">&lt;-</button>
-    <button class="div4">4</button>
-    <button class="div5">5</button>
-    <button class="div6">6</button>
-    <button class="divMultiply">*</button>
-    <button class="divClear">CE</button>
-    <button class="div1">1</button>
-    <button class="div2">2</button>
-    <button class="div3">3</button>
-    <button class="divMinus">-</button>
-    <button class="divEquals">=</button>
-    <button class="div0">0</button>
-    <button class="divKoma">,</button>
-    <button class="divPlus">+</button>
+    <button (click)="numberClicked(7)" class="div7">7</button>
+    <button (click)="numberClicked(8)" class="div8">8</button>
+    <button (click)="numberClicked(9)" class="div9">9</button>
+    <button (click)="operatorClicked(operators.DIVIDE)" class="divDivide">/</button>
+    <button (click)="deleteClicked()" class="divDelete">&lt;-</button>
+    <button (click)="numberClicked(4)" class="div4">4</button>
+    <button (click)="numberClicked(5)" class="div5">5</button>
+    <button (click)="numberClicked(6)" class="div6">6</button>
+    <button (click)="operatorClicked(operators.MULTIPLY)" class="divMultiply">*</button>
+    <button (click)="clearClicked()" class="divClear">CE</button>
+    <button (click)="numberClicked(1)" class="div1">1</button>
+    <button (click)="numberClicked(2)" class="div2">2</button>
+    <button (click)="numberClicked(3)" class="div3">3</button>
+    <button (click)="operatorClicked(operators.MINUS)" class="divMinus">-</button>
+    <button (click)="equalsClicked()" class="divEquals">=</button>
+    <button (click)="numberClicked(0)" class="div0">0</button>
+    <button (click)="commaClicked()" class="comma">,</button>
+    <button (click)="operatorClicked(operators.PLUS)" class="divPlus">+</button>
   </div>

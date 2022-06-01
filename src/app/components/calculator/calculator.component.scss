@@ -1,3 +1,5 @@
+/*https://grid.layoutit.com/*/
+
 :host {
     font-size: 16px;
 }
@@ -14,7 +16,7 @@
         "div7 div8 div9 divDivide divDelete"
         "div4 div5 div6 divMultiply divClear"
         "div1 div2 div3 divMinus divEquals"
-        "div0 div0 divKoma divPlus divEquals";
+        "div0 div0 comma divPlus divEquals";
 
     & > button,
     & > div {
@@ -42,6 +44,11 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: flex-end;
+
+        .error {
+            font-size: small;
+            color: red;
+        }
     }
 }
 
