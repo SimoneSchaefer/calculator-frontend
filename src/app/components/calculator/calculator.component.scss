@@ -1,0 +1,122 @@
+:host {
+    font-size: 16px;
+}
+
+.container {
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2.5fr 1fr 1fr 1fr 1fr;
+    gap: 5px 5px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "formula formula formula formula formula"
+        "div7 div8 div9 divDivide divDelete"
+        "div4 div5 div6 divMultiply divClear"
+        "div1 div2 div3 divMinus divEquals"
+        "div0 div0 divKoma divPlus divEquals";
+
+    & > button,
+    & > div {
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        padding: 1em;
+        margin: 0.5em;
+        font-size: 16px;
+    }
+
+    & > button {
+        border-radius: 5%;
+        &:hover {
+            background-color: aliceblue;
+            cursor: pointer;
+        }
+    }
+
+    .formula {
+        margin-bottom: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-end;
+    }
+}
+
+.formula {
+    grid-area: formula;
+}
+
+.div7 {
+    grid-area: div7;
+}
+
+.div8 {
+    grid-area: div8;
+}
+
+.div9 {
+    grid-area: div9;
+}
+
+.divDivide {
+    grid-area: divDivide;
+}
+
+.divDelete {
+    grid-area: divDelete;
+}
+
+.div4 {
+    grid-area: div4;
+}
+
+.div5 {
+    grid-area: div5;
+}
+
+.div6 {
+    grid-area: div6;
+}
+
+.divMultiply {
+    grid-area: divMultiply;
+}
+
+.divClear {
+    grid-area: divClear;
+}
+
+.div1 {
+    grid-area: div1;
+}
+
+.div2 {
+    grid-area: div2;
+}
+
+.div3 {
+    grid-area: div3;
+}
+
+.divMinus {
+    grid-area: divMinus;
+}
+
+.divEquals {
+    grid-area: divEquals;
+}
+
+.div0 {
+    grid-area: div0;
+}
+
+.divKoma {
+    grid-area: divKoma;
+}
+
+.divPlus {
+    grid-area: divPlus;
+}
