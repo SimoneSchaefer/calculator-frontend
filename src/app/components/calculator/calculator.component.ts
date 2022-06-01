@@ -10,6 +10,7 @@ import { CalulcatorService } from 'src/app/service/calulcator.service';
 export class CalculatorComponent implements OnInit {
   operators = Operator;
   errorMessage: string | null = null;
+  backendError: string | null = null;
 
   private currentFormula: string[] = [];
   private currentNumber: string = '';
@@ -77,14 +78,20 @@ export class CalculatorComponent implements OnInit {
     }
 
     if (this.currentNumberValid()) {
-      this.currentFormula.push(this.currentNumber);
-      this.calculatorService.calculate(this.formattedFormula).pipe(
+      const formula = [...this.currentFormula];
+      formula.push(this.currentNumber);
+      this.calculatorService.calculate(formula.join('')).pipe(
         takeUntil(this.destroy$)
-      ).subscribe((result: number) => {
-        this.currentFormula = [];
-        this.currentNumber = `${result}`;
+      ).subscribe({
+        next: (result: number) => this.setNewResult(result), 
+        error: (e) => this.backendError = 'Das hat nicht geklappt :(' 
       });
     }
+  }
+
+  setNewResult(result: number) {
+    this.currentFormula = [];
+    this.currentNumber = `${result}`;
   }
 
   resetErrorMessage() {
