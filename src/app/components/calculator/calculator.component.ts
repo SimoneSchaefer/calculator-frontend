@@ -22,7 +22,7 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void { }
 
   get formattedFormula() {
-    return this.currentFormula.join(' ');
+    return this.currentFormula.join(' ').replace('.', ',');
   }
   get formattedNumber() {
     return this.currentNumber.replace('.', ',')
@@ -36,6 +36,7 @@ export class CalculatorComponent implements OnInit {
   operatorClicked(operatorInput: Operator) {
     this.resetErrorMessage();
     if (this.currentNumber.length === 0) {
+      this.errorMessage = 'Bitte zuerst Zahl eingeben';
     } else {
       this.currentFormula.push(this.currentNumber);
       this.currentFormula.push(operatorInput);
